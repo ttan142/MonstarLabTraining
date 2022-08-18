@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,700,900");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
-@import url("normalize.css");
+@import url("./normalize.css");
 
+html, 
 body {
   background: #cad3d3;
+  text-align: center;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #5f727f;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {
   margin: 20px;
-  text-align: center;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  color: #5f727f;
 }
 
 .plan {
@@ -25,26 +30,22 @@ body {
 }
 
 .entry-title {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/ocean.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/ocean.png") 15% 60%/190% ;
   width: 360px;
   height: 270px;
   position: relative;
-  background-size: 190%;
-  background-position: 15% 60%;
   color: #fff;
   margin-bottom: 20px;
   opacity: 0.9;
 }
 
 .entry-title h3 {
+  font: lighter 36px 'Montserrat';
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Montserrat';
-  font-size: 36px;
-  font-weight: lighter;
 }
 
 .entry-title .price {
@@ -64,10 +65,11 @@ body {
   padding: auto;
 }
 
-.price span {
+.price ::after {
+  content: "per tour";
   position: absolute;
   font-size: 16px;
-  bottom: -10px;
+  bottom: -5px;
   left: 35px;
   font-weight: 400;
   color: #99a9b5;
@@ -80,7 +82,8 @@ body {
   font-weight: 300;
 }
 
-.entry-content span {
+.entry-content a::after {
+  content: "Sub second line goes here lorem ipsum";
   font-size: 14px;
   color: #99a9b5;
 }
@@ -102,10 +105,8 @@ body {
 }
 
 .btn {
+  font: 300 19px 'Montserrat';
   padding: 3em 0;
-  font-family: 'Montserrat';
-  font-size: 19px;
-  font-weight: 300;
 }
 
 .a {
@@ -116,7 +117,7 @@ body {
 }
 
 .a:hover {
-  background-color: #2196f7;
+  background: #2196f7;
   color: white;
 }
 
@@ -128,7 +129,7 @@ body {
 }
 
 .b:hover {
-  background-color: #6c136f;
+  background: #6c136f;
   color: white;
 }
 
@@ -140,7 +141,7 @@ body {
 }
 
 .c:hover {
-  background-color: #3fb22c;
+  background: #3fb22c;
   color: white;
 }
 
@@ -163,10 +164,7 @@ body {
 }
 
 .basic .entry-title {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/mountain.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/mountain.png") no-repeat center/cover;
   position: relative;
 }
 
@@ -182,14 +180,11 @@ body {
 }
 
 .standard {
-  padding-top: 20px;
+  padding-top: 17px;
 }
 
 .standard .entry-title {
-  background-image: url("img/forest.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("./img/forest.png") no-repeat center/cover;
   position: relative;
 }
 
