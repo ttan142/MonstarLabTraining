@@ -1,9 +1,9 @@
-$color_1: #5f727f;
-$color_2: #2c2e3d;
-$color_3: #2196f7;
-$color_4: #6c136f;
-$color_5: #3fb22c;
-$color_6: #d74498;
+$matte-black: #2c2e3d;
+$blue: #2196f7;
+$purple: #6c136f;
+$green: #3fb22c;
+$pink: #d74498;
+$color_mainfont: #5f727f;
 $color_subfont: #99a9b5;
 $color_white: #fff;
 $font-family_1: "Source Sans Pro", Helvetica, sans-serif;
@@ -12,51 +12,25 @@ $font-family_2: "Montserrat";
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,700,900";
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900";
 @import "./normalize.css";
-
-@mixin buttonNB {
-    position: absolute;
-    cursor: pointer;
-    top: 340px;
-    left: -145px;
-    width: 150px;
-    padding: 10px;
-    background: $color_white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-
-    &:hover {
-        background: $color_2;
-        color: $color_white;
-    }
-}
-
-@mixin BuyTourButton($color) {
-    border: 1px solid $color;
-    padding: 10px 30px;
-    color: $color;
-    text-decoration: none;
-
-    &:hover {
-        background: $color;
-        color: $color_white;
-    }
-}
+@import "./mixin.scss";
 
 html,
 body {
     background: #cad3d3;
     text-align: center;
     font-family: $font-family_1;
-    color: $color_1;
+    color: $color_mainfont;
 }
 
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
+    padding: 0;
 }
 
 .dot {
-    background: $color_2;
+    background: $matte-black;
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -84,11 +58,11 @@ body {
 }
 
 .prev {
-    @include buttonNB;
+    @include forButtonNextBack;
 }
 
 .next {
-    @include buttonNB;
+    @include forButtonNextBack;
     top: 392px;
 }
 
@@ -141,7 +115,7 @@ body {
         left: 0;
         right: 0;
         border-radius: 60px;
-        color: $color_3;
+        color: $blue;
         line-height: 100px;
         font-size: 32px;
         font-weight: lighter;
@@ -195,15 +169,15 @@ body {
 }
 
 .a {
-    @include BuyTourButton($color_3)
+    @include buyTourButton($blue)
 }
 
 .b {
-    @include BuyTourButton($color_4)
+    @include buyTourButton($purple)
 }
 
 .c {
-    @include BuyTourButton($color_5)
+    @include buyTourButton($green)
 }
 
 .hot {
@@ -239,8 +213,8 @@ body {
     }
 
     .price {
-        background: $color_2;
-        color: $color_6;
+        background: $matte-black;
+        color: $pink;
     }
 }
 
@@ -254,6 +228,6 @@ body {
 
     .price {
         background: $color_white;
-        color: $color_5;
+        color: $green;
     }
 }

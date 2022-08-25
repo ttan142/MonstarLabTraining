@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,700,900";
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900";
 @import "./normalize.css";
+
 html,
 body {
   background: #cad3d3;
@@ -9,8 +10,11 @@ body {
   color: #5f727f;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+  padding: 0;
 }
 
 .dot {
@@ -23,6 +27,7 @@ body {
   border-radius: 50%;
   display: inline-block;
 }
+
 .dot:hover {
   background: #fff;
 }
@@ -31,7 +36,12 @@ body {
   background: #fff;
 }
 
-.button1, .standard .entry-title, .basic .entry-title, .entry-title, .plan-inner, .button2 {
+.button1,
+.standard .entry-title,
+.basic .entry-title,
+.entry-title,
+.plan-inner,
+.button2 {
   position: relative;
 }
 
@@ -51,6 +61,7 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
 }
+
 .prev:hover {
   background: #2c2e3d;
   color: #fff;
@@ -69,6 +80,7 @@ body {
   transition: 0.6s ease;
   top: 392px;
 }
+
 .next:hover {
   background: #2c2e3d;
   color: #fff;
@@ -102,6 +114,7 @@ body {
   margin-bottom: 20px;
   opacity: 0.9;
 }
+
 .entry-title h3 {
   font: lighter 36px "Montserrat";
   margin: 0 auto;
@@ -110,6 +123,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .entry-title .price {
   position: absolute;
   top: -60px;
@@ -126,6 +140,7 @@ body {
   font-weight: lighter;
   padding: auto;
 }
+
 .entry-title .price::after {
   content: "per tour";
   position: absolute;
@@ -141,21 +156,25 @@ body {
   padding: 15px 0;
   font-weight: 300;
 }
+
 .entry-content a::after {
   content: "Sub second line goes here lorem ipsum";
   font-size: 14px;
   color: #99a9b5;
 }
+
 .entry-content ul {
   margin: 0;
   padding: 15px 0;
   list-style: none;
 }
+
 .entry-content li {
   font-size: 16px;
   padding: 15px 0;
   font-weight: normal;
 }
+
 .entry-content li:nth-of-type(2n+1) {
   background: #f4f6f7;
 }
@@ -171,6 +190,7 @@ body {
   color: #2196f7;
   text-decoration: none;
 }
+
 .a:hover {
   background: #2196f7;
   color: #fff;
@@ -182,6 +202,7 @@ body {
   color: #6c136f;
   text-decoration: none;
 }
+
 .b:hover {
   background: #6c136f;
   color: #fff;
@@ -193,6 +214,7 @@ body {
   color: #3fb22c;
   text-decoration: none;
 }
+
 .c:hover {
   background: #3fb22c;
   color: #fff;
@@ -207,6 +229,7 @@ body {
   left: -15px;
   font-weight: 700;
 }
+
 .hot .centered {
   position: absolute;
   top: 50%;
@@ -218,14 +241,17 @@ body {
 .basic {
   padding-top: 0;
 }
+
 .basic .entry-title {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/mountain.png") no-repeat center/cover;
 }
-.basic .entry-title > p {
+
+.basic .entry-title>p {
   font-size: 14px;
   color: #99a9b5;
   padding-top: 160px;
 }
+
 .basic .price {
   background: #2c2e3d;
   color: #d74498;
@@ -234,10 +260,14 @@ body {
 .standard {
   padding-top: 15px;
 }
+
 .standard .entry-title {
   background: url("./img/forest.png") no-repeat center/cover;
 }
+
 .standard .price {
   background: #fff;
   color: #3fb22c;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
