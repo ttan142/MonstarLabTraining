@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700,900");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
-@import url("./normalize.css");
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,700,900";
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900";
+@import "./normalize.css";
 
-html, 
+html,
 body {
   background: #cad3d3;
   text-align: center;
@@ -10,37 +10,113 @@ body {
   color: #5f727f;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+  padding: 0;
+}
+
+.dot {
+  background: #2c2e3d;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  padding-left: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot:hover {
+  background: #fff;
+}
+
+.active {
+  background: #fff;
+}
+
+.button1,
+.standard .entry-title,
+.basic .entry-title,
+.entry-title,
+.plan-inner,
+.button2 {
+  position: relative;
+}
+
+.button2 {
+  left: 20px;
+}
+
+.prev {
+  position: absolute;
+  cursor: pointer;
+  top: 340px;
+  left: -145px;
+  width: 150px;
+  padding: 10px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+}
+
+.prev:hover {
+  background: #2c2e3d;
+  color: #fff;
+}
+
+.next {
+  position: absolute;
+  cursor: pointer;
+  top: 340px;
+  left: -145px;
+  width: 150px;
+  padding: 10px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  top: 392px;
+}
+
+.next:hover {
+  background: #2c2e3d;
+  color: #fff;
 }
 
 .container {
   margin: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .plan {
   display: inline-block;
   margin: 70px 20px 0px;
+  padding-top: 15px;
 }
 
 .plan-inner {
   background: #fff;
   margin: 0 auto;
-  position: relative;
 }
 
 .entry-title {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/ocean.png") 15% 60%/190% ;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/ocean.png") 15% 60%/190%;
   width: 360px;
   height: 270px;
-  position: relative;
   color: #fff;
   margin-bottom: 20px;
   opacity: 0.9;
 }
 
 .entry-title h3 {
-  font: lighter 36px 'Montserrat';
+  font: lighter 36px "Montserrat";
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -51,7 +127,7 @@ body {
 .entry-title .price {
   position: absolute;
   top: -60px;
-  background: #ffffff;
+  background: #fff;
   height: 120px;
   width: 120px;
   margin: 0 auto;
@@ -65,7 +141,7 @@ body {
   padding: auto;
 }
 
-.price ::after {
+.entry-title .price::after {
   content: "per tour";
   position: absolute;
   font-size: 16px;
@@ -76,7 +152,6 @@ body {
 }
 
 .entry-content {
-  
   font-size: 24px;
   padding: 15px 0;
   font-weight: 300;
@@ -105,7 +180,7 @@ body {
 }
 
 .btn {
-  font: 300 19px 'Montserrat';
+  font: 300 19px "Montserrat";
   padding: 3em 0;
 }
 
@@ -118,31 +193,31 @@ body {
 
 .a:hover {
   background: #2196f7;
-  color: white;
+  color: #fff;
 }
 
 .b {
   border: 1px solid #6c136f;
   padding: 10px 30px;
   color: #6c136f;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .b:hover {
   background: #6c136f;
-  color: white;
+  color: #fff;
 }
 
 .c {
   border: 1px solid #3fb22c;
   padding: 10px 30px;
   color: #3fb22c;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .c:hover {
   background: #3fb22c;
-  color: white;
+  color: #fff;
 }
 
 .hot {
@@ -163,9 +238,12 @@ body {
   font-size: 12px;
 }
 
+.basic {
+  padding-top: 0;
+}
+
 .basic .entry-title {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/mountain.png") no-repeat center/cover;
-  position: relative;
 }
 
 .basic .entry-title>p {
@@ -180,12 +258,11 @@ body {
 }
 
 .standard {
-  padding-top: 17px;
+  padding-top: 15px;
 }
 
 .standard .entry-title {
   background: url("./img/forest.png") no-repeat center/cover;
-  position: relative;
 }
 
 .standard .price {
