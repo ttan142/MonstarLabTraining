@@ -7,10 +7,10 @@
 // 	Thay đổi giá trị của name thành Bui.
 // 	Xóa thuộc tính name khỏi đối tượng.
 
-const User = new Object();
-User.name = 'Hoang';
-User.surname = 'Viet';
-User.name = 'Bui';
+const User = {};
+User.name = "Hoang";
+User.surname = "Viet";
+User.name = "Bui";
 delete User.name;
 console.log(User);
 
@@ -26,14 +26,14 @@ console.log(User);
 let salaries = {
   Bui: 1200,
   Viet: 1600,
-  Hoang: 1350
-}
+  Hoang: 1350,
+};
 let sum = 0;
 
 for (let key in salaries) {
   sum += salaries[key];
-};
-console.log(sum)
+}
+console.log(sum);
 
 // Bài 3.
 // 	[Input]:
@@ -53,20 +53,20 @@ console.log(sum)
 // 	};
 
 let menu = {
-  width: 200,
+  width: "200",
   height: 300,
-  name: "Bui Viet Hoang"
+  name: "Bui Viet Hoang",
 };
 
 function multiplyNumeric(obj) {
   for (let key in obj) {
-    if (typeof obj[key] == 'number') {
+    if (isNaN(Number(obj[key])) == false) {
       obj[key] *= 2;
     }
   }
 }
 multiplyNumeric(menu);
-console.log(menu)
+console.log(menu);
 
 // Bài 4.
 // 	Tạo mảng có tên là styles với các mục “Jazz” và “Blues”.
@@ -98,11 +98,11 @@ console.log(styles);
 
 function camelize(str) {
   return str
-    .split('-')
-    .map(
-      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    .split("-")
+    .map((word, index) =>
+      index == 0 ? word : word[0].toUpperCase() + word.slice(1)
     )
-    .join('');
+    .join("");
 }
 console.log(camelize("background-color"));
 console.log(camelize("list-style-image"));
@@ -112,20 +112,18 @@ console.log(camelize("-webkit-transition"));
 //    Viết một hàm filterRangeInPlace(arr, a, b) lấy một mảng arr và loại bỏ khỏi nó tất cả các giá trị ngoại trừ những giá trị nằm giữa a và b. Nghiệm là: a ≤ arr[i] ≤ b.
 
 function filterRangeInPlace(arr, a, b) {
-  for (let i = 0; i < arr.length; i++) {
-    let val = arr[i];
+  return arr.filter((item, i) => {
+    val = item;
     if (val < a || val > b) {
-      arr.splice(i, 1);
-      i--;
+      return false;
     }
-  }
+    return true;
+  });
 }
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-filterRangeInPlace(arr, 5, 10);
-
-console.log(arr);
+console.log(filterRangeInPlace(arr, 5, 10));
 
 //   Bài 7.
 //   let initArray = [
@@ -145,9 +143,9 @@ let initArray = [
   { name: "Hoang", age: 27 },
   { name: "Bui2" },
   { age: 20 },
-  { name: "Hoang2", age: 18 }
+  { name: "Hoang2", age: 18 },
 ];
-let names = initArray.map(item => item.name).filter(Boolean);;
+let names = initArray.map((item) => item.name).filter(Boolean);
 
 console.log(names);
 
@@ -156,7 +154,7 @@ console.log(names);
 // 	Viết function getAverageAge(arr) trả về tuổi trung bình.
 
 function getAverageAge(users) {
-  let avgAge = users.map(item => item.age).filter(Boolean);
+  let avgAge = users.map((item) => item.age).filter(Boolean);
   return avgAge.reduce((a, b) => a + b, 0) / avgAge.length;
 }
 console.log(getAverageAge(initArray));
@@ -167,11 +165,11 @@ console.log(getAverageAge(initArray));
 
 //   [Output]: [1, 2, 3, 4, 5, 6]
 
-let flattened = [[1, 2], [3, 4], [5, 6]];
+let flattened = [1, [1, 2], [3, 4], [5, 6]];
 function flatArray(array) {
   return array.reduce((a, b) => {
-    return a.concat(b);
-  });
+    return a.concat(Array.isArray(b) ? flatArray(b) : b);
+  }, []);
 }
 
 console.log(flatArray(flattened));
@@ -179,16 +177,21 @@ console.log(flatArray(flattened));
 // Bài 10.
 // Xây dựng chương trình có một ô input, một button. Sau khi nhập giá trị số vào ô input, click vào button thì in các số từ 1 tới giá trị của ô input ra màn hình. Nếu không nhập vào ô input, click button sẽ in số 1 + "Vui lòng nhập giá trị số vào ô input".
 function myFunction() {
-  let x = document.getElementById("numb").value;
+  const x = document.getElementById("numb").value;
   let text;
-  if (isNaN(x) || x < 1) {
+  if (isNaN(x)) {
     text = "Input không hợp lệ";
   } else if (x == null || x == "") {
     text = "1 Vui lòng nhập giá trị số vào ô input";
-  } else {
+  } else if (x > 0) {
     for (var i = 1; i <= x; i++) {
-      document.write(i + ' ');
+      document.write(i + " ");
+    }
+  } else {
+    for (var i = 1; x <= i; i--) {
+      document.write(i + " ");
     }
   }
+
   document.getElementById("output").innerHTML = text;
 }
