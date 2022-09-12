@@ -154,8 +154,15 @@ console.log(names);
 // 	Viết function getAverageAge(arr) trả về tuổi trung bình.
 
 function getAverageAge(users) {
-  let avgAge = users.map((item) => item.age).filter(Boolean);
-  return avgAge.reduce((a, b) => a + b, 0) / avgAge.length;
+  let count = 0,
+    sum = 0;
+  users.reduce((a, b) => {
+    if (b.age) {
+      count = count + 1;
+      sum = sum + b.age;
+    }
+  }, 0);
+  return sum / count;
 }
 console.log(getAverageAge(initArray));
 
