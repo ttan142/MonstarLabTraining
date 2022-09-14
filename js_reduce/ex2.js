@@ -9,7 +9,7 @@ const arr1 = [1, 2, 3, 4, 5],
   arr2 = [2, 3, 6];
 
 function Difference(a1, a2) {
-  var result = [];
+  const result = [];
   a1.reduce((a, b, i) => {
     if (a2.indexOf(a1[i]) === -1) {
       result.push(a1[i]);

@@ -7,11 +7,11 @@
 const arr = [1, 2, 3, 4, 5];
 
 function chunk(arr, size) {
-  var myArr = [];
+  const result = [];
   arr.reduce((prev, curr, i) => {
     if (!(i % size)) myArr.push(arr.slice(i, i + size));
   }, 0);
-  return myArr;
+  return result;
 }
 
 console.log(chunk(arr, 2));
