@@ -7,7 +7,7 @@ const arr = [2, 1, 0, 3, 2, 1, 2];
 function uniqueArray(arr) {
   return arr.reduce((prev, curr) => {
     if (!prev.includes(curr)) {
-      return [...prev, curr];
+      prev.push(curr);
     }
     return prev;
   }, []);

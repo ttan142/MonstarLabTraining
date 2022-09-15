@@ -19,11 +19,11 @@ const arr = [
 function groupBy(arr, property) {
   return arr.reduce((prev, obj) => {
     const key = obj[property];
-    const curGroup = prev[key] ?? [];
-    return {
-      ...prev,
-      [key]: [...curGroup, obj],
-    };
+    if (!prev[key]) {
+      prev[key] = [];
+    }
+    prev[key].push(obj);
+    return prev;
   }, {});
 }
 
