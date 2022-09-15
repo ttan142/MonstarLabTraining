@@ -5,11 +5,11 @@
 const arr = [2, 1, 0, 3, 2, 1, 2];
 
 function uniqueArray(arr) {
-  return arr.reduce((prev, curr) => {
-    if (!prev.includes(curr)) {
-      prev.push(curr);
+  return arr.reduce((total, currentValue) => {
+    if (!total.includes(currentValue)) {
+      total.push(currentValue);
     }
-    return prev;
+    return total;
   }, []);
 }
 

@@ -9,11 +9,11 @@ const arr1 = [1, 2, 3, 4, 5],
   arr2 = [2, 3, 6];
 
 function Difference(arr1, arr2) {
-  return arr1.reduce((prev, curr, i) => {
+  return arr1.reduce((total, currentValue, i) => {
     if (arr2.indexOf(arr1[i]) === -1) {
-      prev.push(curr);
+      total.push(currentValue);
     }
-    return prev;
+    return total;
   }, []);
 }
 

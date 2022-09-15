@@ -17,13 +17,11 @@ const arr = [
 ];
 
 function groupBy(arr, property) {
-  return arr.reduce((prev, obj) => {
+  return arr.reduce((total, obj) => {
     const key = obj[property];
-    if (!prev[key]) {
-      prev[key] = [];
-    }
-    prev[key].push(obj);
-    return prev;
+    total[key] ? total[key] : (total[key] = []);
+    total[key].push(obj);
+    return total;
   }, {});
 }
 
